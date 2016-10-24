@@ -3,6 +3,8 @@
     ViewBag.Title = "List";
     var newList = ViewBag.data as string[];
     var newlist= ViewData["data"] as string[];
+    var cur = (int)ViewBag.id;
+    var start = cur - 3;
 }
 
 <h2>List</h2>
@@ -27,4 +29,14 @@
         <li>@item</li>
     }
 
+</ul>
+
+<ul>
+    
+    @for (int i = start; i < cur + 3; i++)
+    {
+        <li>
+            @Html.ActionLink(string.Format("第{0}页", i), "List", "Home", new { id = i }, null)
+        </li>
+    }
 </ul>
