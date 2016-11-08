@@ -1,27 +1,24 @@
 ﻿@model BlogArticle
 @{
-    ViewBag.Title = "AddArticle";
+    ViewBag.Title = "Edit";
 
 }
-
-<h2>添加博客文章</h2>
-
+<h2>编辑</h2>
 @using (Html.BeginForm("ArticleSave", "Blog"))
 {
-    @Html.ValidationSummary()
+
+    <input type="hidden" value="@Model.Id" name="Id" />
     <table class="table table-bordered">
         <tr>
             <td>标题：</td>
             <td>
-                @Html.TextBoxFor(o => o.Subject)
-                @Html.ValidationMessageFor(o => o.Subject)
+                @Html.TextBox("Subject")
             </td>
         </tr>
         <tr>
             <td>内容</td>
             <td>
-                @Html.TextAreaFor(o => o.Body, new { style = "width:600px; max-width:1000px;" })
-                @Html.ValidationMessageFor(o => o.Body)
+                @Html.TextArea("Body", new { style = "width:600px; max-width:1000px;" })
             </td>
         </tr>
         <tr>
