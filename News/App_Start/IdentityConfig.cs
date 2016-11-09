@@ -11,7 +11,6 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using News.Models;
-
 namespace News
 {
     public class EmailService : IIdentityMessageService
